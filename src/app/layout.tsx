@@ -5,6 +5,7 @@ import OfferHeader from "../components/ui/OfferHeader";
 import Header from "@/components/ui/Header";
 import HeroSection from "@/components/ui/HeroSection";
 import ProductShowcase from "@/components/ui/ProductShowcase";
+import WhyUs from "@/components/ui/WhyUs";
 
 // Configure the font
 const manrope = Manrope({
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Header />
         <HeroSection />
         <ProductShowcase />
+        <WhyUs />
         {children}
       </body>
     </html>

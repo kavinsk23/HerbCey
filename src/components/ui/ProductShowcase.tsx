@@ -42,8 +42,8 @@ export default function ProductShowcase() {
             <Image
               src="/images/product-box.jpg"
               alt="HerbCey Rosemary Oil Product Box"
-              width={400}
-              height={500}
+              width={500}
+              height={600}
               className="object-contain mb-4"
             />
           </div>
