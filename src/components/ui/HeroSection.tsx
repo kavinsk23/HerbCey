@@ -30,7 +30,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-yellow-500 font-medium text-sm sm:text-base"
+              className="text-[#ff914d] font-medium text-sm sm:text-base"
             >
               Pure Natural Wellness
             </motion.p>
@@ -40,7 +40,8 @@ export default function HeroSection() {
               transition={{ delay: 0.3 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2c3e50] mb-4 leading-14"
             >
-              Discover HerbCey Rosemary Scalp & Hair Oil
+              Discover <span className="text-[#00bf63]">HerbCey</span> Rosemary
+              Scalp & Hair Oil
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -59,7 +60,7 @@ export default function HeroSection() {
             >
               <Link
                 href="/products"
-                className="inline-block bg-yellow-500 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg hover:bg-yellow-600 transition-colors text-sm sm:text-base"
+                className="inline-block bg-[#ff914d] text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg hover:bg-[#ffab73] transition-colors text-sm sm:text-base"
               >
                 Shop Now
               </Link>

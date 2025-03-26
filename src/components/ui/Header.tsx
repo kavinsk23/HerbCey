@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -132,7 +133,17 @@ const Header = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-text-dark hover:text-logo-green-dark transition-colors"
+                className="text-text-dark pb-1 relative 
+                  after:content-[''] 
+                  after:absolute 
+                  after:bottom-0 
+                  after:left-0 
+                  after:w-0 
+                  after:h-0.5 
+                  after:bg-[#00bf63] 
+                  after:transition-all 
+                  after:duration-300 
+                  hover:after:w-full"
               >
                 {item.label}
               </Link>
