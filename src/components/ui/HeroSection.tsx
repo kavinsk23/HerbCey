@@ -93,7 +93,7 @@ export default function HeroSection() {
               alt="Background Right"
               width={400}
               height={400}
-              className="w-full h-auto object-contain -ml-8"
+              className="w-full h-auto object-contain -ml-4 md:-ml-8"
             />
           </motion.div>
 
