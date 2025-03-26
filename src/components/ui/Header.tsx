@@ -114,8 +114,8 @@ const Header = () => {
       </AnimatePresence>
 
       {/* Main Header */}
-      <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+      <header className="bg-white shadow-sm flex justify-center">
+        <div className="container px-4 py-3 flex justify-between items-center w-full">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold text-logo-green-dark">
             <Image
