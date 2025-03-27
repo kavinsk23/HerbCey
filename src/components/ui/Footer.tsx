@@ -14,6 +14,7 @@ import {
   Linkedin,
   ArrowUp,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import { FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
@@ -48,54 +49,64 @@ export default function Footer() {
     }
   };
 
+  const services = [
+    {
+      icon: Truck,
+      title: "Home Delivery",
+      description: "Delivery for all over Sri Lanka",
+    },
+    {
+      icon: Shield,
+      title: "Quality Products",
+      description: "We ensure the product quality",
+    },
+    {
+      icon: RefreshCw,
+      title: "3 Days Return",
+      description: "Return product within 3 days",
+    },
+    {
+      icon: Headset,
+      title: "Online Support",
+      description: "We ensure you can trust us easily",
+    },
+  ];
+
   return (
     <>
       {/* Services Section */}
-      <section className="bg-[#F5F7FA] py-16" id="cot">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="bg-[#F5F7FA] py-16"
+        id="cot"
+      >
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
-            <div className="flex items-center space-x-4">
-              <Truck className="w-12 h-12 text-logo-green-dark" />
-              <div>
-                <h4 className="font-bold text-[#2c3e50]">Home Delivery</h4>
-                <p className="text-sm text-gray-600">
-                  Delivery for all over Sri Lanka
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <Shield className="w-12 h-12 text-logo-green-dark" />
-              <div>
-                <h4 className="font-bold text-[#2c3e50]">Quality Products</h4>
-                <p className="text-sm text-gray-600">
-                  We ensure the product quality
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <RefreshCw className="w-12 h-12 text-logo-green-dark" />
-              <div>
-                <h4 className="font-bold text-[#2c3e50]">3 Days Return</h4>
-                <p className="text-sm text-gray-600">
-                  Return product within 3 days
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <Headset className="w-12 h-12 text-logo-green-dark" />
-              <div>
-                <h4 className="font-bold text-[#2c3e50]">Online Support</h4>
-                <p className="text-sm text-gray-600">
-                  We ensure you can trust us easily
-                </p>
-              </div>
-            </div>
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.2,
+                }}
+                className="flex items-center space-x-4"
+              >
+                <service.icon className="w-12 h-12 text-logo-green-dark" />
+                <div>
+                  <h4 className="font-bold text-[#2c3e50]">{service.title}</h4>
+                  <p className="text-sm text-gray-600">{service.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Main Footer */}
       <footer className="bg-[#121212] py-16 text-white" id="footer">

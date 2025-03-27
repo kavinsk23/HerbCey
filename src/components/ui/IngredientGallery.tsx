@@ -21,8 +21,20 @@ export default function HerbCeyGallery() {
   const [mainImageIndex, setMainImageIndex] = useState(0);
 
   return (
-    <section className="container mx-auto px-4 py-16">
-      <div className="text-center mb-12">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="container mx-auto px-4 py-16"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+        className="text-center mb-12"
+      >
         <h2 className="text-3xl font-bold text-[#2c3e50] mb-4">
           Our Pure, Home-Grown Ingredients
         </h2>
@@ -31,14 +43,14 @@ export default function HerbCeyGallery() {
           Lankan gardens to your wellness routine, every image tells a story of
           pure, sustainable sourcing and traditional herbal wisdom.
         </p>
-      </div>
+      </motion.div>
 
       <div className="relative w-full mb-8">
         {/* Main Large Image */}
         <motion.div
           key={galleryImages[mainImageIndex]}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className="w-full aspect-video cursor-pointer"
           onClick={() => setSelectedImage(galleryImages[mainImageIndex])}
@@ -53,12 +65,22 @@ export default function HerbCeyGallery() {
       </div>
 
       {/* Horizontal Scrollable Thumbnails */}
-      <div className="flex overflow-x-auto space-x-4 pb-4 justify-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        className="flex overflow-x-auto space-x-4 pb-4 justify-center"
+      >
         {galleryImages.map((image, index) => (
           <motion.div
             key={image}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
             className={`flex-shrink-0 w-32 h-24 cursor-pointer 
               ${
                 index === mainImageIndex
@@ -77,7 +99,7 @@ export default function HerbCeyGallery() {
             />
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Fullscreen Image Modal */}
       <AnimatePresence>
@@ -90,9 +112,9 @@ export default function HerbCeyGallery() {
             onClick={() => setSelectedImage(null)}
           >
             <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
               className="max-w-full max-h-full"
             >
               <Image
@@ -106,6 +128,6 @@ export default function HerbCeyGallery() {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </motion.section>
   );
 }

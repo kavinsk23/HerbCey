@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function HairProblemsSolution() {
   const problems = [
@@ -28,13 +29,23 @@ export default function HairProblemsSolution() {
   return (
     <section className="container mx-auto px-4 py-16">
       {problems.map((item, index) => (
-        <div
+        <motion.div
           key={item.problem}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 * index }}
           className={`flex flex-col md:flex-row items-center justify-between mb-16 ${
             index % 2 === 0 ? "md:flex-row-reverse" : ""
           }`}
         >
-          <div className="w-full md:w-1/2 flex justify-center">
+          <motion.div
+            initial={{ x: index % 2 === 0 ? 50 : -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 * index }}
+            className="w-full md:w-1/2 flex justify-center"
+          >
             <Image
               src={item.image}
               alt={item.problem}
@@ -42,24 +53,57 @@ export default function HairProblemsSolution() {
               height={600}
               className="w-full max-w-md h-auto object-contain"
             />
-          </div>
+          </motion.div>
 
-          <div className="w-full md:w-1/2 mt-8 md:mt-0 md:px-12 text-center md:text-left">
-            <h3 className="text-lg text-gray-700 mb-4">
-              Solve Your Hair Concerns
-            </h3>
-            <h1 className="text-4xl font-bold text-[#2c3e50] mb-6">
-              {item.problem}
-            </h1>
-            <p className="text-gray-600 mb-6">{item.solution}</p>
-            <Link
-              href="/products/rosemary-oil"
-              className="inline-block bg-[#ff914d] text-white px-6 py-3 rounded-lg hover:bg-[#ffab73] transition-colors"
+          <motion.div
+            initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 * index }}
+            className="w-full md:w-1/2 mt-8 md:mt-0 md:px-12 text-center md:text-left"
+          >
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 * index }}
+              className="text-lg text-gray-700 mb-4"
             >
-              Shop Now
-            </Link>
-          </div>
-        </div>
+              Solve Your Hair Concerns
+            </motion.h3>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 * index }}
+              className="text-4xl font-bold text-[#2c3e50] mb-6"
+            >
+              {item.problem}
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 * index }}
+              className="text-gray-600 mb-6"
+            >
+              {item.solution}
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 * index }}
+            >
+              <Link
+                href="/products/rosemary-oil"
+                className="inline-block bg-[#ff914d] text-white px-6 py-3 rounded-lg hover:bg-[#ffab73] transition-colors"
+              >
+                Shop Now
+              </Link>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       ))}
     </section>
   );
