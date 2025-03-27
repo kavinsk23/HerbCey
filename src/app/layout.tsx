@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
-import { usePathname } from "next/navigation";
 import OfferHeader from "../components/ui/OfferHeader";
 import Header from "@/components/ui/Header";
-import HeroSection from "@/components/ui/HeroSection";
-import ProductShowcase from "@/components/ui/ProductShowcase";
-import WhyUs from "@/components/ui/WhyUs";
-import OurProducts from "@/components/ui/OurProducts";
-import IngredientGallery from "@/components/ui/IngredientGallery";
 import Footer from "@/components/ui/Footer";
 
 // Configure the font
