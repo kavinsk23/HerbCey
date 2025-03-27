@@ -6,6 +6,8 @@ import Header from "@/components/ui/Header";
 import HeroSection from "@/components/ui/HeroSection";
 import ProductShowcase from "@/components/ui/ProductShowcase";
 import WhyUs from "@/components/ui/WhyUs";
+import OurProducts from "@/components/ui/OurProducts";
+import IngredientGallery from "@/components/ui/IngredientGallery";
 
 // Configure the font
 const manrope = Manrope({
@@ -32,6 +34,8 @@ export default function RootLayout({
         <HeroSection />
         <ProductShowcase />
         <WhyUs />
+        <OurProducts />
+        <IngredientGallery />
         {children}
       </body>
     </html>
