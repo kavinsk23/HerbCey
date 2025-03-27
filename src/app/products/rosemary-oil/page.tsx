@@ -79,10 +79,6 @@ export default function ProductDetailPage() {
       <div className="grid md:grid-cols-2 gap-6 md:gap-12">
         {/* Product Image Gallery Section */}
         <div className="relative">
-          <div className="absolute top-4 left-4 bg-[#00bf63] text-white px-3 py-1 rounded-full z-10">
-            30% OFF
-          </div>
-
           {/* Main Large Media */}
           <motion.div
             key={galleryMedia[mainImageIndex].src}
@@ -95,9 +91,9 @@ export default function ProductDetailPage() {
               <Image
                 src={galleryMedia[mainImageIndex].src}
                 alt="HerbCey Rosemary Oil"
-                width={300}
+                width={600}
                 height={800}
-                className="h-full object-contain rounded-lg"
+                className="h-full w-full object-contain rounded-lg"
                 onClick={() =>
                   setSelectedImage(galleryMedia[mainImageIndex].src)
                 }
