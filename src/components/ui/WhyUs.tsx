@@ -53,7 +53,7 @@ export default function HairProblemsSolution() {
             </h1>
             <p className="text-gray-600 mb-6">{item.solution}</p>
             <Link
-              href="/products"
+              href="/products/rosemary-oil"
               className="inline-block bg-[#ff914d] text-white px-6 py-3 rounded-lg hover:bg-[#ffab73] transition-colors"
             >
               Shop Now

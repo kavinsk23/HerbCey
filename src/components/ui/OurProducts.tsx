@@ -5,7 +5,10 @@ import Link from "next/link";
 
 export default function OurProducts() {
   return (
-    <section className="container mx-auto w-full px-4 py-16 bg-[#F5F7FA]">
+    <section
+      id="OurProducts"
+      className="container mx-auto w-full px-4 py-16 bg-[#F5F7FA]"
+    >
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-[#2c3e50] mb-4">Our Products</h2>
         <p className="text-gray-600">Pure Natural Wellness in Every Bottle</p>

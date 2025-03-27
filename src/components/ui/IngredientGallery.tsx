@@ -53,7 +53,7 @@ export default function HerbCeyGallery() {
       </div>
 
       {/* Horizontal Scrollable Thumbnails */}
-      <div className="flex overflow-x-auto space-x-4 pb-4">
+      <div className="flex overflow-x-auto space-x-4 pb-4 justify-center">
         {galleryImages.map((image, index) => (
           <motion.div
             key={image}

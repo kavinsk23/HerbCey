@@ -5,7 +5,10 @@ import Link from "next/link";
 
 export default function ProductShowcase() {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between container mx-auto px-4 py-16">
+    <section
+      className="flex flex-col md:flex-row items-center justify-between container mx-auto px-4 py-16"
+      id="about"
+    >
       {/* Product Image - Now First */}
       <div className="w-full md:w-2/3 mt-8 md:mt-0 flex justify-center md:justify-start order-2 md:order-1">
         <div className="relative">
@@ -43,7 +46,7 @@ export default function ProductShowcase() {
           product, but a promise of natural wellness.
         </p>
         <Link
-          href="/products"
+          href="/products/rosemary-oil"
           className="inline-block bg-[#ff914d] text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg hover:bg-[#ffab73] transition-colors text-sm sm:text-base"
         >
           Shop Now

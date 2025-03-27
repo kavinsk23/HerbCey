@@ -12,7 +12,7 @@ interface OfferHeaderProps {
 const OfferHeader = ({
   offerText = "30% Off - Limited Time Offer!",
   buttonText = "Shop Now",
-  buttonLink = "/products",
+  buttonLink = "/products/rosemary-oil",
 }: OfferHeaderProps) => {
   // Hydration state to prevent SSR/Client mismatch
   const [isMounted, setIsMounted] = useState(false);

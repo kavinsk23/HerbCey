@@ -1,24 +1,58 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+
+interface MenuItem {
+  href: string;
+  label: string;
+}
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const menuItems = [
-    { href: "/", label: "Home" },
-    { href: "/products", label: "Products" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
+  const menuItems: MenuItem[] = [
+    { href: isHomePage ? "#HeroSection" : "/HeroSection", label: "Home" },
+    { href: isHomePage ? "#about" : "/about", label: "About" },
+    { href: isHomePage ? "#OurProducts" : "/OurProducts", label: "Products" },
+    { href: isHomePage ? "#footer" : "/footer", label: "Contact" },
   ];
+
+  // Function to handle smooth scrolling
+  const handleSmoothScroll = (e: React.MouseEvent, targetId: string) => {
+    // Only apply for anchor links on the home page
+    if (isHomePage && targetId.startsWith("#")) {
+      e.preventDefault();
+      const sectionId = targetId.substring(1); // Remove the # character
+      const section = document.getElementById(sectionId);
+
+      if (section) {
+        // Close mobile menu if it's open
+        if (isMenuOpen) {
+          setIsMenuOpen(false);
+        }
+
+        // Smooth scroll to the section
+        section.scrollIntoView({ behavior: "smooth" });
+
+        // Optional: Add offset for fixed header
+        window.scrollTo({
+          top: section.offsetTop - 80, // Adjust value based on header height
+          behavior: "smooth",
+        });
+      }
+    }
+  };
 
   return (
     <>
@@ -85,7 +119,7 @@ const Header = () => {
                   >
                     <Link
                       href={item.href}
-                      onClick={toggleMenu}
+                      onClick={(e) => handleSmoothScroll(e, item.href)}
                       className="block py-3 text-xl text-text-dark hover:text-logo-green-dark transition-colors"
                     >
                       {item.label}
@@ -115,7 +149,7 @@ const Header = () => {
       </AnimatePresence>
 
       {/* Main Header */}
-      <header className="bg-white shadow-sm flex justify-center">
+      <header className="bg-white shadow-sm flex justify-center sticky top-0 z-40">
         <div className="container px-4 py-3 flex justify-between items-center w-full">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold text-logo-green-dark">
@@ -133,6 +167,7 @@ const Header = () => {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={(e) => handleSmoothScroll(e, item.href)}
                 className="text-text-dark pb-1 relative 
                   after:content-[''] 
                   after:absolute 

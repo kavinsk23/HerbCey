@@ -21,6 +21,7 @@ export default function HeroSection() {
     <motion.section
       ref={ref}
       className="relative w-full overflow-hidden bg-[#F5F7FA] flex justify-center"
+      id="HeroSection"
     >
       <div className="container px-4 py-8 flex flex-col-reverse lg:grid lg:grid-cols-2 w-full">
         {/* Left Section - Text Content */}
@@ -59,7 +60,7 @@ export default function HeroSection() {
               transition={{ delay: 0.5 }}
             >
               <Link
-                href="/products"
+                href="/products/rosemary-oil"
                 className="inline-block bg-[#ff914d] text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg hover:bg-[#ffab73] transition-colors text-sm sm:text-base"
               >
                 Shop Now

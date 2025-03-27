@@ -17,6 +17,14 @@ export default function ProductDetailPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [mainImageIndex, setMainImageIndex] = useState(0);
 
+  const handleGetQuote = () => {
+    const message = "Hello! I'm interested in ordering from HerbCey.";
+    const whatsappUrl = `https://wa.me/94702727435?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   // Product gallery media (images and video)
   const galleryMedia: MediaItem[] = [
     {
@@ -66,13 +74,6 @@ export default function ProductDetailPage() {
     "Adds natural shine",
     "Prevents premature graying",
   ];
-
-  // Function to handle WhatsApp redirect
-  const handleGetQuote = () => {
-    const message = `Hello, I'm interested in HerbCey Rosemary Oil. I'd like to order ${quantity} bottle(s). Can you provide me with a quote?`;
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/94702727435?text=${encodedMessage}`, "_blank");
-  };
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-16">
