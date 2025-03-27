@@ -68,7 +68,7 @@ const Header = () => {
             onClick={toggleMenu}
           >
             <motion.div
-              className="fixed top-11 right-0 w-64 h-full bg-white shadow-lg"
+              className="fixed right-0 w-64 h-full bg-white shadow-lg"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -133,15 +133,7 @@ const Header = () => {
                     delay: 0.7,
                     duration: 0.3,
                   }}
-                >
-                  <Link
-                    href="/cart"
-                    onClick={toggleMenu}
-                    className="py-3 text-xl text-text-dark hover:text-logo-green-dark transition-colors flex items-center"
-                  >
-                    Cart
-                  </Link>
-                </motion.div>
+                ></motion.div>
               </motion.nav>
             </motion.div>
           </motion.div>
