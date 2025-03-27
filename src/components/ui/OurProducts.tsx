@@ -56,7 +56,7 @@ export default function OurProducts() {
             className="relative mb-6 group"
           >
             <Image
-              src="/images/bottle-1.png"
+              src="/images/product-img.jpg"
               alt="HerbCey Rosemary Scalp & Hair Oil"
               width={500}
               height={700}
