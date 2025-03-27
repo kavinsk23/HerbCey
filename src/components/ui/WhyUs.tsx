@@ -8,19 +8,19 @@ export default function HairProblemsSolution() {
     {
       problem: "Hair Fall?",
       solution:
-        "Our Rosemary Oil stimulates hair follicles, reducing hair fall and promoting stronger, healthier growth.",
+        "Our Rosemary Oil reduces hair fall by increasing blood flow to follicles, blocking DHT (a hormone that causes hair loss), and protecting scalp health with its anti-inflammatory and antimicrobial properties. Studies show these natural compounds strengthen roots and prevent shedding.",
       image: "/images/hair-fall-solution.jpeg",
     },
     {
       problem: "Split Ends?",
       solution:
-        "Nourish and seal split ends with our natural rosemary oil, restoring hair's natural strength and shine.",
+        "Our rosemary oil prevents split ends by deeply penetrating hair shafts to restore moisture and strengthen protein bonds. Its natural nutrients seal cuticles, protecting hair from environmental damage while vitamin E and antioxidants repair existing splits and prevent new ones from forming.",
       image: "/images/split-ends-solution.jpeg",
     },
     {
       problem: "Dandruff and Scalp Irritation?",
       solution:
-        "Banish dandruff naturally with our rosemary oil. Calm your scalp, stop the itch, and restore your hair's healthy shine.",
+        "Our rosemary oil effectively eliminates dandruff through its natural antifungal and antimicrobial properties that target the root cause. It soothes inflamed scalps, regulates oil production, and deeply moisturizes to prevent flaking. Regular application creates a balanced scalp environment that stops itching and restores your hair's natural luster without harsh chemicals.",
       image: "/images/dandruff-solution.jpeg",
     },
   ];
@@ -31,7 +31,7 @@ export default function HairProblemsSolution() {
         <div
           key={item.problem}
           className={`flex flex-col md:flex-row items-center justify-between mb-16 ${
-            index % 2 !== 0 ? "md:flex-row-reverse" : ""
+            index % 2 === 0 ? "md:flex-row-reverse" : ""
           }`}
         >
           <div className="w-full md:w-1/2 flex justify-center">
@@ -54,7 +54,7 @@ export default function HairProblemsSolution() {
             <p className="text-gray-600 mb-6">{item.solution}</p>
             <Link
               href="/products"
-              className="inline-block bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600 transition-colors"
+              className="inline-block bg-[#ff914d] text-white px-6 py-3 rounded-lg hover:bg-[#ffab73] transition-colors"
             >
               Shop Now
             </Link>

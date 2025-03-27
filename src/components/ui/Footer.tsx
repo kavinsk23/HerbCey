@@ -198,7 +198,7 @@ export default function Footer() {
         {/* Scroll to Top */}
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 bg-yellow-500 text-white p-3 rounded-full shadow-lg hover:bg-yellow-600 transition-colors"
+          className="fixed bottom-6 right-6 bg-[#ff914d] text-white p-3 rounded-full shadow-lg hover:bg-[#ffab73] transition-colors"
         >
           <ArrowUp />
         </button>
