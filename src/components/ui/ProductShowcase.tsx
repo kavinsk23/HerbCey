@@ -97,8 +97,8 @@ export default function ProductShowcase() {
           transition={{ delay: 0.6 }}
           className="text-gray-600 mb-6"
         >
-          Our customers believe in us, knowing our rosemary oil isn't just a
-          product, but a promise of natural wellness.
+          Our customers believe in us, knowing our rosemary oil isn&apos;t just
+          a product, but a promise of natural wellness.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -250,8 +250,9 @@ export default function ProductDetailPage() {
               🌿 Our Guarantee
             </h4>
             <p className="text-xs md:text-sm text-gray-700">
-              100% natural, no chemicals. If you're not satisfied, we offer a
-              30-day money-back guarantee. Your hair's health is our promise.
+              100% natural, no chemicals. If you&apos;re not satisfied, we offer
+              a 30-day money-back guarantee. Your hair&apos;s health is our
+              promise.
             </p>
           </div>
         </div>
@@ -267,15 +268,15 @@ export default function ProductDetailPage() {
             Experience the ancient wisdom of Sri Lankan highlands in every drop
             of our rosemary oil. Harvested from pristine mountain gardens and
             crafted using time-honored extraction methods, our formula delivers
-            nature's purest gift directly to your hair and scalp.
+            nature&apos;s purest gift directly to your hair and scalp.
           </p>
           <p className="text-sm md:text-base">
             Unlike mass-produced alternatives filled with chemicals, our
             small-batch process preserves every powerful nutrient and essential
-            oil. We don't just promise natural - we guarantee transformative
-            results that thousands of satisfied customers have already
-            discovered. Your journey to healthier, stronger, more beautiful hair
-            begins with this bottle.
+            oil. We don&apos;t just promise natural - we guarantee
+            transformative results that thousands of satisfied customers have
+            already discovered. Your journey to healthier, stronger, more
+            beautiful hair begins with this bottle.
           </p>
         </div>
       </div>
