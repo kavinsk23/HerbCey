@@ -1,14 +1,17 @@
-export default function Home() {
+import HeroSection from "@/components/ui/HeroSection";
+import ProductShowcase from "@/components/ui/ProductShowcase";
+import WhyUs from "@/components/ui/WhyUs";
+import OurProducts from "@/components/ui/OurProducts";
+import IngredientGallery from "@/components/ui/IngredientGallery";
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white">
-      <div className="text-center py-16">
-        <h1 className="text-4xl font-bold text-logo-green-dark mb-4">
-          Welcome to HerbCey
-        </h1>
-        <p className="text-xl text-text-dark">
-          Your natural wellness journey starts here
-        </p>
-      </div>
-    </main>
+    <>
+      <HeroSection />
+      <ProductShowcase />
+      <WhyUs />
+      <OurProducts />
+      <IngredientGallery />
+    </>
   );
 }

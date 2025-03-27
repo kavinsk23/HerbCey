@@ -41,7 +41,7 @@ export default function OurProducts() {
 
             {/* View More Button */}
             <Link
-              href="/products"
+              href="/products/rosemary-oil"
               className="inline-block mt-4 border-2 border-yellow-500 text-yellow-500 px-6 py-3 rounded-lg hover:bg-yellow-500 hover:text-white transition-colors"
             >
               View More
