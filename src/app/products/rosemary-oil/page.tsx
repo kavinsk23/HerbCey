@@ -95,9 +95,9 @@ export default function ProductDetailPage() {
               <Image
                 src={galleryMedia[mainImageIndex].src}
                 alt="HerbCey Rosemary Oil"
-                width={600}
+                width={300}
                 height={800}
-                className="w-full h-full object-contain rounded-lg"
+                className="h-full object-contain rounded-lg"
                 onClick={() =>
                   setSelectedImage(galleryMedia[mainImageIndex].src)
                 }
@@ -118,39 +118,41 @@ export default function ProductDetailPage() {
           </motion.div>
 
           {/* Horizontal Scrollable Thumbnails */}
-          <div className="flex overflow-x-auto space-x-2 pb-4 snap-x">
-            {galleryMedia.map((media, index) => (
-              <motion.div
-                key={media.src}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 cursor-pointer relative snap-start
+          <div className="w-full flex justify-center">
+            <div className="flex overflow-x-auto space-x-2 pb-4 snap-x w-80 sm:w-full justify-center">
+              {galleryMedia.map((media, index) => (
+                <motion.div
+                  key={media.src}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 cursor-pointer relative
                   ${
                     index === mainImageIndex
                       ? "border-2 border-logo-green-dark"
                       : "border border-gray-200"
                   }
                 `}
-                onClick={() => setMainImageIndex(index)}
-              >
-                <Image
-                  src={
-                    media.type === "image" ? media.src : media.thumbnail || ""
-                  }
-                  alt={`Product ${media.type} ${index + 1}`}
-                  width={80}
-                  height={80}
-                  className="object-cover w-full h-full rounded"
-                />
-                {media.type === "video" && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded">
-                    <div className="w-5 h-5 md:w-6 md:h-6 bg-white rounded-full flex items-center justify-center">
-                      <div className="w-0 h-0 border-t-transparent border-t-[5px] border-b-transparent border-b-[5px] border-l-white border-l-[8px] ml-0.5"></div>
+                  onClick={() => setMainImageIndex(index)}
+                >
+                  <Image
+                    src={
+                      media.type === "image" ? media.src : media.thumbnail || ""
+                    }
+                    alt={`Product ${media.type} ${index + 1}`}
+                    width={80}
+                    height={80}
+                    className="object-cover w-full h-full rounded"
+                  />
+                  {media.type === "video" && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded">
+                      <div className="w-5 h-5 md:w-6 md:h-6 bg-white rounded-full flex items-center justify-center">
+                        <div className="w-0 h-0 border-t-transparent border-t-[5px] border-b-transparent border-b-[5px] border-l-white border-l-[8px] ml-0.5"></div>
+                      </div>
                     </div>
-                  </div>
-                )}
-              </motion.div>
-            ))}
+                  )}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
 
