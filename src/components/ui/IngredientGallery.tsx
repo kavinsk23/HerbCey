@@ -5,11 +5,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const galleryImages = [
-  "/images/RosemaryImg-2.jpg",
-  "/images/RosemaryImg-1.jpg",
-  "/images/RosemaryImg-3.jpg",
-  "/images/RosemaryImg-4.jpg",
-  "/images/RosemaryImg-5.jpg",
+  "/images/Rosemary-Img-2.jpg",
+  "/images/Rosemary-Img-1.jpg",
+  "/images/Rosemary-Img-3.jpg",
+  "/images/Rosemary-Img-4.jpg",
+  "/images/Rosemary-Img-5.jpg",
   "/images/CurryLeaves-1.jpg",
   "/images/CurryLeaves-2.jpg",
   "/images/CurryLeaves-3.jpg",
