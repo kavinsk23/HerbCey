@@ -37,9 +37,9 @@ export default function ProductDetailPage() {
       thumbnail: "/images/RosemaryImg-1.jpg",
     },
     { type: "image", src: "/images/bottle-1.png" },
-    { type: "image", src: "/images/RosemaryImg-1.jpg" },
-    { type: "image", src: "/images/RosemaryImg-2.jpg" },
-    { type: "image", src: "/images/RosemaryImg-3.jpg" },
+    { type: "image", src: "/images/Rosemary-Img-1.jpg" },
+    { type: "image", src: "/images/Rosemary-Img-2.jpg" },
+    { type: "image", src: "/images/Rosemary-Img-3.jpg" },
     { type: "image", src: "/images/CurryLeaves-1.jpg" },
   ];
 
